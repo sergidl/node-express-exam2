@@ -16,5 +16,5 @@ export default
         passwd_invalid_format: 'The password does not meet the password policy requirements'
 
 
-
+        
     }
