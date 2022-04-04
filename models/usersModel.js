@@ -1,5 +1,5 @@
 import users from '../data/user.js';
-
+import notices from '../data/notices.js';
 class User {
 
     createUser(user) {
@@ -87,6 +87,29 @@ class User {
             };
         });
         return users.find(element => (element.username == user.username))
+    }
+    getFullUser(user) {
+        console.log(`---> userModel::getFullUser ${user.username}`);
+        return users.find(element => (element.username == user.username))
+    }
+    addProfileData(user) {
+        console.log(`---> userModel::addProfileData ${user.username}`);
+        users.forEach(element => {
+            if (element.username == user.username) {
+                element.profiledata = user.profiledata
+            };
+        });
+        return users.find(element => (element.username == user.username))
+    }
+    getNotices(user) {
+        console.log(`---> userModel::getNotices ${user.username}`);
+        const usr = users.find(element => (element.username == user.username))
+        notices.forEach(element => {
+            if (element.username == user.username) {
+                usr.notices = element.notices
+            };
+        });
+        return usr.notices
     }
 }
 

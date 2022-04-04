@@ -21,7 +21,27 @@ Content-Type: application/json
 {
 "username":"aquaman@dominio.es", "grants":["create_database","create_role","create_table","create_view"]
 }
+####
+//GET FULL
+POST http://localhost:3000/users/user
+Content-Type: application/json
 
+{
+"username":"aquaman@dominio.es", "password":"man$Super3"
+}
+###
+//ADD ProfileData
+
+POST http://localhost:3000/users/profiledata
+Content-Type: application/json
+
+{
+"username":"aquaman@dominio.es", "profiledata":{
+    "city":"Barcelona",
+    "region":"Barcelona",
+    "zip":"08032"
+    }
+}
 ####
 GET http://localhost:3000/users/aquaman@dominio.es
 
